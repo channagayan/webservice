@@ -1,0 +1,409 @@
+<definitions name='WebClassService' targetNamespace='http://webservices.directfn.com/' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://webservices.directfn.com/' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://webservices.directfn.com/' version='1.0' xmlns:tns='http://webservices.directfn.com/' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='AccountSummary' type='tns:accountSummary'/>
+   <xs:element name='CashAccountDetails' type='tns:cashAccountDetails'/>
+   <xs:element name='Order' type='tns:order'/>
+   <xs:element name='PortfolioDetails' type='tns:portfolioDetails'/>
+   <xs:element name='PortfolioRecord' type='tns:portfolioRecord'/>
+   <xs:element name='getAccountSummaryForCustomer' type='tns:getAccountSummaryForCustomer'/>
+   <xs:element name='getAccountSummaryForCustomerResponse' type='tns:getAccountSummaryForCustomerResponse'/>
+   <xs:element name='getCashAccountDetailsForCustomer' type='tns:getCashAccountDetailsForCustomer'/>
+   <xs:element name='getCashAccountDetailsForCustomerResponse' type='tns:getCashAccountDetailsForCustomerResponse'/>
+   <xs:element name='getCustomerBuyingPower' type='tns:getCustomerBuyingPower'/>
+   <xs:element name='getCustomerBuyingPowerResponse' type='tns:getCustomerBuyingPowerResponse'/>
+   <xs:element name='getPortfolioDetailsForCustomer' type='tns:getPortfolioDetailsForCustomer'/>
+   <xs:element name='getPortfolioDetailsForCustomerResponse' type='tns:getPortfolioDetailsForCustomerResponse'/>
+   <xs:element name='getPortfolioRecordsForCustomer' type='tns:getPortfolioRecordsForCustomer'/>
+   <xs:element name='getPortfolioRecordsForCustomerResponse' type='tns:getPortfolioRecordsForCustomerResponse'/>
+   <xs:element name='orderListForCustomer' type='tns:orderListForCustomer'/>
+   <xs:element name='orderListForCustomerResponse' type='tns:orderListForCustomerResponse'/>
+   <xs:element name='orderListForDealer' type='tns:orderListForDealer'/>
+   <xs:element name='orderListForDealerResponse' type='tns:orderListForDealerResponse'/>
+   <xs:element name='orderSearchForCustomer' type='tns:orderSearchForCustomer'/>
+   <xs:element name='orderSearchForCustomerResponse' type='tns:orderSearchForCustomerResponse'/>
+   <xs:element name='testWebService' type='tns:testWebService'/>
+   <xs:element name='testWebServiceResponse' type='tns:testWebServiceResponse'/>
+   <xs:complexType name='orderListForCustomer'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+     <xs:element minOccurs='0' name='arg1' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='orderListForCustomerResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:order'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='order'>
+    <xs:sequence>
+     <xs:element name='clOrderID' type='xs:long'/>
+     <xs:element minOccurs='0' name='portfolioNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='symbol' type='xs:string'/>
+     <xs:element minOccurs='0' name='securityExchange' type='xs:string'/>
+     <xs:element minOccurs='0' name='orderType' type='xs:string'/>
+     <xs:element minOccurs='0' name='issueCurrency' type='xs:string'/>
+     <xs:element name='side' type='xs:int'/>
+     <xs:element name='quantity' type='xs:int'/>
+     <xs:element name='stopPx' type='xs:double'/>
+     <xs:element name='timeInForce' type='xs:int'/>
+     <xs:element minOccurs='0' name='expireTime' type='xs:string'/>
+     <xs:element name='minQty' type='xs:int'/>
+     <xs:element name='maxFloor' type='xs:int'/>
+     <xs:element name='origClOrderID' type='xs:long'/>
+     <xs:element minOccurs='0' name='orderID' type='xs:string'/>
+     <xs:element minOccurs='0' name='executionID' type='xs:string'/>
+     <xs:element minOccurs='0' name='executionType' type='xs:string'/>
+     <xs:element minOccurs='0' name='status' type='xs:string'/>
+     <xs:element minOccurs='0' name='rejectReason' type='xs:string'/>
+     <xs:element name='lastShares' type='xs:int'/>
+     <xs:element name='cumQty' type='xs:int'/>
+     <xs:element name='leavesQty' type='xs:int'/>
+     <xs:element minOccurs='0' name='transactTime' type='xs:string'/>
+     <xs:element name='avgPx' type='xs:double'/>
+     <xs:element name='lastPx' type='xs:double'/>
+     <xs:element name='orderNo' type='xs:long'/>
+     <xs:element minOccurs='0' name='createDate' type='xs:string'/>
+     <xs:element name='orderValue' type='xs:double'/>
+     <xs:element name='netSettle' type='xs:double'/>
+     <xs:element name='price' type='xs:double'/>
+     <xs:element minOccurs='0' name='lastUpdateDate' type='xs:string'/>
+     <xs:element minOccurs='0' name='marketCode' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='orderListForDealer'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+     <xs:element name='arg1' type='xs:int'/>
+     <xs:element name='arg2' type='xs:int'/>
+     <xs:element name='arg3' type='xs:int'/>
+     <xs:element minOccurs='0' name='arg4' type='xs:string'/>
+     <xs:element minOccurs='0' name='arg5' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='orderListForDealerResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:order'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='orderSearchForCustomer'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+     <xs:element minOccurs='0' name='arg1' type='xs:string'/>
+     <xs:element minOccurs='0' name='arg2' type='xs:string'/>
+     <xs:element minOccurs='0' name='arg3' type='xs:string'/>
+     <xs:element name='arg4' type='xs:int'/>
+     <xs:element name='arg5' type='xs:int'/>
+     <xs:element minOccurs='0' name='arg6' type='xs:string'/>
+     <xs:element minOccurs='0' name='arg7' type='xs:string'/>
+     <xs:element minOccurs='0' name='arg8' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='orderSearchForCustomerResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:order'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getPortfolioDetailsForCustomer'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getPortfolioDetailsForCustomerResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:portfolioDetails'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='portfolioDetails'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='portfolioName' type='xs:string'/>
+     <xs:element minOccurs='0' name='portfolioNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='customerReferenceNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='cashAccountNumber' type='xs:string'/>
+     <xs:element name='marginEnabled' type='xs:boolean'/>
+     <xs:element name='accountStatus' type='xs:int'/>
+     <xs:element name='portfolioMargin' type='xs:double'/>
+     <xs:element name='marginDue' type='xs:double'/>
+     <xs:element minOccurs='0' name='currency' type='xs:string'/>
+     <xs:element name='portfolioValue' type='xs:double'/>
+     <xs:element name='approvalStatus' type='xs:int'/>
+     <xs:element name='marginBlock' type='xs:double'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getPortfolioRecordsForCustomer'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getPortfolioRecordsForCustomerResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:portfolioRecord'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='portfolioRecord'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='portfolioNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='exchange' type='xs:string'/>
+     <xs:element minOccurs='0' name='currency' type='xs:string'/>
+     <xs:element name='netHoldings' type='xs:int'/>
+     <xs:element name='averageCost' type='xs:double'/>
+     <xs:element name='sellPending' type='xs:int'/>
+     <xs:element name='pledgedQty' type='xs:int'/>
+     <xs:element name='buyPending' type='xs:int'/>
+     <xs:element name='averagePrice' type='xs:double'/>
+     <xs:element name='marginDue' type='xs:double'/>
+     <xs:element name='openBuyCount' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getCashAccountDetailsForCustomer'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getCashAccountDetailsForCustomerResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:cashAccountDetails'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='cashAccountDetails'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='cashAccountNumber' type='xs:string'/>
+     <xs:element name='blockedAmount' type='xs:double'/>
+     <xs:element name='primaryTradinglimit' type='xs:double'/>
+     <xs:element minOccurs='0' name='primaryTradingLimitExpDate' type='xs:string'/>
+     <xs:element name='secondaryTradinglimit' type='xs:double'/>
+     <xs:element minOccurs='0' name='secondaryTradingLimitExpDate' type='xs:string'/>
+     <xs:element name='Margin' type='xs:double'/>
+     <xs:element name='marginDue' type='xs:double'/>
+     <xs:element name='marginBalance' type='xs:double'/>
+     <xs:element name='pendingSettle' type='xs:double'/>
+     <xs:element name='pendingWithdrawal' type='xs:double'/>
+     <xs:element name='pendingDeposit' type='xs:double'/>
+     <xs:element minOccurs='0' name='cashAccountID' type='xs:string'/>
+     <xs:element minOccurs='0' name='currency' type='xs:string'/>
+     <xs:element name='balance' type='xs:double'/>
+     <xs:element name='isTradingEnabled' type='xs:boolean'/>
+     <xs:element name='dayTradingLimit' type='xs:double'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getAccountSummaryForCustomer'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getAccountSummaryForCustomerResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:accountSummary'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='accountSummary'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='PortfolioDetails' nillable='true' type='xs:anyType'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='CashAccountDetails' nillable='true' type='xs:anyType'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getCustomerBuyingPower'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+     <xs:element minOccurs='0' name='arg1' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='getCustomerBuyingPowerResponse'>
+    <xs:sequence>
+     <xs:element name='return' type='xs:double'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='testWebService'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='arg0' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='testWebServiceResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='WebClass_getPortfolioRecordsForCustomer'>
+  <part element='tns:getPortfolioRecordsForCustomer' name='getPortfolioRecordsForCustomer'></part>
+ </message>
+ <message name='WebClass_orderListForDealer'>
+  <part element='tns:orderListForDealer' name='orderListForDealer'></part>
+ </message>
+ <message name='WebClass_testWebService'>
+  <part element='tns:testWebService' name='testWebService'></part>
+ </message>
+ <message name='WebClass_orderListForDealerResponse'>
+  <part element='tns:orderListForDealerResponse' name='orderListForDealerResponse'></part>
+ </message>
+ <message name='WebClass_orderSearchForCustomerResponse'>
+  <part element='tns:orderSearchForCustomerResponse' name='orderSearchForCustomerResponse'></part>
+ </message>
+ <message name='WebClass_getAccountSummaryForCustomer'>
+  <part element='tns:getAccountSummaryForCustomer' name='getAccountSummaryForCustomer'></part>
+ </message>
+ <message name='WebClass_getAccountSummaryForCustomerResponse'>
+  <part element='tns:getAccountSummaryForCustomerResponse' name='getAccountSummaryForCustomerResponse'></part>
+ </message>
+ <message name='WebClass_getCustomerBuyingPower'>
+  <part element='tns:getCustomerBuyingPower' name='getCustomerBuyingPower'></part>
+ </message>
+ <message name='WebClass_getPortfolioDetailsForCustomerResponse'>
+  <part element='tns:getPortfolioDetailsForCustomerResponse' name='getPortfolioDetailsForCustomerResponse'></part>
+ </message>
+ <message name='WebClass_getPortfolioDetailsForCustomer'>
+  <part element='tns:getPortfolioDetailsForCustomer' name='getPortfolioDetailsForCustomer'></part>
+ </message>
+ <message name='WebClass_getPortfolioRecordsForCustomerResponse'>
+  <part element='tns:getPortfolioRecordsForCustomerResponse' name='getPortfolioRecordsForCustomerResponse'></part>
+ </message>
+ <message name='WebClass_orderListForCustomerResponse'>
+  <part element='tns:orderListForCustomerResponse' name='orderListForCustomerResponse'></part>
+ </message>
+ <message name='WebClass_orderListForCustomer'>
+  <part element='tns:orderListForCustomer' name='orderListForCustomer'></part>
+ </message>
+ <message name='WebClass_orderSearchForCustomer'>
+  <part element='tns:orderSearchForCustomer' name='orderSearchForCustomer'></part>
+ </message>
+ <message name='WebClass_testWebServiceResponse'>
+  <part element='tns:testWebServiceResponse' name='testWebServiceResponse'></part>
+ </message>
+ <message name='WebClass_getCustomerBuyingPowerResponse'>
+  <part element='tns:getCustomerBuyingPowerResponse' name='getCustomerBuyingPowerResponse'></part>
+ </message>
+ <message name='WebClass_getCashAccountDetailsForCustomer'>
+  <part element='tns:getCashAccountDetailsForCustomer' name='getCashAccountDetailsForCustomer'></part>
+ </message>
+ <message name='WebClass_getCashAccountDetailsForCustomerResponse'>
+  <part element='tns:getCashAccountDetailsForCustomerResponse' name='getCashAccountDetailsForCustomerResponse'></part>
+ </message>
+ <portType name='WebClass'>
+  <operation name='getAccountSummaryForCustomer' parameterOrder='getAccountSummaryForCustomer'>
+   <input message='tns:WebClass_getAccountSummaryForCustomer'></input>
+   <output message='tns:WebClass_getAccountSummaryForCustomerResponse'></output>
+  </operation>
+  <operation name='getCashAccountDetailsForCustomer' parameterOrder='getCashAccountDetailsForCustomer'>
+   <input message='tns:WebClass_getCashAccountDetailsForCustomer'></input>
+   <output message='tns:WebClass_getCashAccountDetailsForCustomerResponse'></output>
+  </operation>
+  <operation name='getCustomerBuyingPower' parameterOrder='getCustomerBuyingPower'>
+   <input message='tns:WebClass_getCustomerBuyingPower'></input>
+   <output message='tns:WebClass_getCustomerBuyingPowerResponse'></output>
+  </operation>
+  <operation name='getPortfolioDetailsForCustomer' parameterOrder='getPortfolioDetailsForCustomer'>
+   <input message='tns:WebClass_getPortfolioDetailsForCustomer'></input>
+   <output message='tns:WebClass_getPortfolioDetailsForCustomerResponse'></output>
+  </operation>
+  <operation name='getPortfolioRecordsForCustomer' parameterOrder='getPortfolioRecordsForCustomer'>
+   <input message='tns:WebClass_getPortfolioRecordsForCustomer'></input>
+   <output message='tns:WebClass_getPortfolioRecordsForCustomerResponse'></output>
+  </operation>
+  <operation name='orderListForCustomer' parameterOrder='orderListForCustomer'>
+   <input message='tns:WebClass_orderListForCustomer'></input>
+   <output message='tns:WebClass_orderListForCustomerResponse'></output>
+  </operation>
+  <operation name='orderListForDealer' parameterOrder='orderListForDealer'>
+   <input message='tns:WebClass_orderListForDealer'></input>
+   <output message='tns:WebClass_orderListForDealerResponse'></output>
+  </operation>
+  <operation name='orderSearchForCustomer' parameterOrder='orderSearchForCustomer'>
+   <input message='tns:WebClass_orderSearchForCustomer'></input>
+   <output message='tns:WebClass_orderSearchForCustomerResponse'></output>
+  </operation>
+  <operation name='testWebService' parameterOrder='testWebService'>
+   <input message='tns:WebClass_testWebService'></input>
+   <output message='tns:WebClass_testWebServiceResponse'></output>
+  </operation>
+ </portType>
+ <binding name='WebClassBinding' type='tns:WebClass'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='getAccountSummaryForCustomer'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='getCashAccountDetailsForCustomer'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='getCustomerBuyingPower'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='getPortfolioDetailsForCustomer'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='getPortfolioRecordsForCustomer'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='orderListForCustomer'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='orderListForDealer'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='orderSearchForCustomer'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='testWebService'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='WebClassService'>
+  <port binding='tns:WebClassBinding' name='WebClassPort'>
+   <soap:address location='http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT'/>
+  </port>
+ </service>
+</definitions>

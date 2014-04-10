@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="remote" resourceRoot="" soapui-version="4.5.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="WebClassBinding" type="wsdl" bindingName="{http://webservices.directfn.com/jaws}WebClassBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Projects/Nigeria/WebService/remotewsdl.wsdl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/D:/Projects/Nigeria/WebService/remotewsdl.wsdl.xml"><con:part><con:url>file:/D:/Projects/Nigeria/WebService/remotewsdl.wsdl.xml</con:url><con:content><![CDATA[<definitions name="WebClassService" targetNamespace="http://webservices.directfn.com/jaws" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://lang.java/jaws" xmlns:ns2="http://reflect.lang.java/jaws" xmlns:ns3="http://annotation.lang.java/jaws" xmlns:ns4="http://net.java/jaws" xmlns:ns5="http://security.java/jaws" xmlns:ns6="http://cert.security.java/jaws" xmlns:ns7="http://util.java/jaws" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservices.directfn.com/jaws" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="http://annotation.lang.java/jaws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webservices.directfn.com/jaws" xmlns:ns2="http://lang.java/jaws" xmlns:ns4="http://reflect.lang.java/jaws" xmlns:ns7="http://www.w3.org/2001/XMLSchema" xmlns:ns8="http://util.java/jaws" xmlns:ns9="http://net.java/jaws" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://annotation.lang.java/jaws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://www.w3.org/2001/XMLSchema"/>
+      <import namespace="http://cert.security.java/jaws"/>
+      <import namespace="http://net.java/jaws"/>
+      <import namespace="http://util.java/jaws"/>
+      <import namespace="http://reflect.lang.java/jaws"/>
+      <import namespace="http://webservices.directfn.com/jaws"/>
+      <import namespace="http://lang.java/jaws"/>
+      <import namespace="http://security.java/jaws"/>
+      <complexType name="Annotation">
+        <sequence/>
+      </complexType>
+      <complexType name="Annotation.Array">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true" type="tns:Annotation"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="http://cert.security.java/jaws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webservices.directfn.com/jaws" xmlns:ns2="http://lang.java/jaws" xmlns:ns4="http://reflect.lang.java/jaws" xmlns:ns7="http://www.w3.org/2001/XMLSchema" xmlns:ns8="http://util.java/jaws" xmlns:ns9="http://net.java/jaws" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://cert.security.java/jaws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://annotation.lang.java/jaws"/>
+      <import namespace="http://www.w3.org/2001/XMLSchema"/>
+      <import namespace="http://net.java/jaws"/>
+      <import namespace="http://util.java/jaws"/>
+      <import namespace="http://reflect.lang.java/jaws"/>
+      <import namespace="http://webservices.directfn.com/jaws"/>
+      <import namespace="http://lang.java/jaws"/>
+      <import namespace="http://security.java/jaws"/>
+      <complexType name="CertPath">
+        <sequence>
+          <element name="encoded" nillable="true" type="base64Binary"/>
+          <element name="encodings" nillable="true" type="ns8:Iterator"/>
+          <element name="type" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="Certificate">
+        <sequence>
+          <element name="encoded" nillable="true" type="base64Binary"/>
+          <element name="publicKey" nillable="true" type="ns5:PublicKey"/>
+          <element name="type" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="http://net.java/jaws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webservices.directfn.com/jaws" xmlns:ns2="http://lang.java/jaws" xmlns:ns4="http://reflect.lang.java/jaws" xmlns:ns7="http://www.w3.org/2001/XMLSchema" xmlns:ns8="http://util.java/jaws" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://net.java/jaws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://annotation.lang.java/jaws"/>
+      <import namespace="http://www.w3.org/2001/XMLSchema"/>
+      <import namespace="http://cert.security.java/jaws"/>
+      <import namespace="http://util.java/jaws"/>
+      <import namespace="http://reflect.lang.java/jaws"/>
+      <import namespace="http://webservices.directfn.com/jaws"/>
+      <import namespace="http://lang.java/jaws"/>
+      <import namespace="http://security.java/jaws"/>
+      <complexType name="URL">
+        <sequence>
+          <element name="authority" nillable="true" type="string"/>
+          <element name="content" nillable="true" type="ns2:Object"/>
+          <element name="defaultPort" type="int"/>
+          <element name="file" nillable="true" type="string"/>
+          <element name="host" nillable="true" type="string"/>
+          <element name="path" nillable="true" type="string"/>
+          <element name="port" type="int"/>
+          <element name="protocol" nillable="true" type="string"/>
+          <element name="query" nillable="true" type="string"/>
+          <element name="ref" nillable="true" type="string"/>
+          <element name="userInfo" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="http://util.java/jaws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webservices.directfn.com/jaws" xmlns:ns2="http://lang.java/jaws" xmlns:ns4="http://reflect.lang.java/jaws" xmlns:ns7="http://www.w3.org/2001/XMLSchema" xmlns:ns9="http://net.java/jaws" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://util.java/jaws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://annotation.lang.java/jaws"/>
+      <import namespace="http://www.w3.org/2001/XMLSchema"/>
+      <import namespace="http://cert.security.java/jaws"/>
+      <import namespace="http://net.java/jaws"/>
+      <import namespace="http://reflect.lang.java/jaws"/>
+      <import namespace="http://webservices.directfn.com/jaws"/>
+      <import namespace="http://lang.java/jaws"/>
+      <import namespace="http://security.java/jaws"/>
+      <complexType name="Iterator">
+        <sequence/>
+      </complexType>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="http://reflect.lang.java/jaws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webservices.directfn.com/jaws" xmlns:ns2="http://lang.java/jaws" xmlns:ns7="http://www.w3.org/2001/XMLSchema" xmlns:ns8="http://util.java/jaws" xmlns:ns9="http://net.java/jaws" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://reflect.lang.java/jaws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://annotation.lang.java/jaws"/>
+      <import namespace="http://www.w3.org/2001/XMLSchema"/>
+      <import namespace="http://cert.security.java/jaws"/>
+      <import namespace="http://net.java/jaws"/>
+      <import namespace="http://util.java/jaws"/>
+      <import namespace="http://webservices.directfn.com/jaws"/>
+      <import namespace="http://lang.java/jaws"/>
+      <import namespace="http://security.java/jaws"/>
+      <complexType name="Constructor">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="declaredAnnotations" nillable="true" type="ns3:Annotation"/>
+          <element name="declaringClass" nillable="true" type="ns2:Class"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="exceptionTypes" nillable="true" type="ns2:Class"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="genericExceptionTypes" nillable="true" type="tns:Type"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="genericParameterTypes" nillable="true" type="tns:Type"/>
+          <element name="modifiers" type="int"/>
+          <element name="name" nillable="true" type="string"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="parameterAnnotations" nillable="true" type="ns3:Annotation.Array"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="parameterTypes" nillable="true" type="ns2:Class"/>
+          <element name="synthetic" type="boolean"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="typeParameters" nillable="true" type="tns:TypeVariable"/>
+          <element name="varArgs" type="boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="Field">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="declaredAnnotations" nillable="true" type="ns3:Annotation"/>
+          <element name="declaringClass" nillable="true" type="ns2:Class"/>
+          <element name="enumConstant" type="boolean"/>
+          <element name="genericType" nillable="true" type="tns:Type"/>
+          <element name="modifiers" type="int"/>
+          <element name="name" nillable="true" type="string"/>
+          <element name="synthetic" type="boolean"/>
+          <element name="type" nillable="true" type="ns2:Class"/>
+        </sequence>
+      </complexType>
+      <complexType name="GenericDeclaration">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="typeParameters" nillable="true" type="tns:TypeVariable"/>
+        </sequence>
+      </complexType>
+      <complexType name="Method">
+        <sequence>
+          <element name="bridge" type="boolean"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="declaredAnnotations" nillable="true" type="ns3:Annotation"/>
+          <element name="declaringClass" nillable="true" type="ns2:Class"/>
+          <element name="defaultValue" nillable="true" type="ns2:Object"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="exceptionTypes" nillable="true" type="ns2:Class"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="genericExceptionTypes" nillable="true" type="tns:Type"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="genericParameterTypes" nillable="true" type="tns:Type"/>
+          <element name="genericReturnType" nillable="true" type="tns:Type"/>
+          <element name="modifiers" type="int"/>
+          <element name="name" nillable="true" type="string"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="parameterAnnotations" nillable="true" type="ns3:Annotation.Array"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="parameterTypes" nillable="true" type="ns2:Class"/>
+          <element name="returnType" nillable="true" type="ns2:Class"/>
+          <element name="synthetic" type="boolean"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="typeParameters" nillable="true" type="tns:TypeVariable"/>
+          <element name="varArgs" type="boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="Type">
+        <sequence/>
+      </complexType>
+      <complexType name="TypeVariable">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="bounds" nillable="true" type="tns:Type"/>
+          <element name="genericDeclaration" nillable="true" type="tns:GenericDeclaration"/>
+          <element name="name" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="http://webservices.directfn.com/jaws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://lang.java/jaws" xmlns:ns4="http://reflect.lang.java/jaws" xmlns:ns7="http://www.w3.org/2001/XMLSchema" xmlns:ns8="http://util.java/jaws" xmlns:ns9="http://net.java/jaws" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://annotation.lang.java/jaws"/>
+      <import namespace="http://www.w3.org/2001/XMLSchema"/>
+      <import namespace="http://cert.security.java/jaws"/>
+      <import namespace="http://net.java/jaws"/>
+      <import namespace="http://util.java/jaws"/>
+      <import namespace="http://reflect.lang.java/jaws"/>
+      <import namespace="http://lang.java/jaws"/>
+      <import namespace="http://security.java/jaws"/>
+      <complexType name="getAccountSummaryForCustomer">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="getAccountSummaryForCustomerResponse">
+        <sequence>
+          <element name="result" nillable="true" type="tns:AccountSummary"/>
+        </sequence>
+      </complexType>
+      <complexType name="getCashAccountDetailsForCustomer">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="getCashAccountDetailsForCustomerResponse">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="result" nillable="true" type="tns:CashAccountDetails"/>
+        </sequence>
+      </complexType>
+      <complexType name="getCustomerBuyingPower">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+          <element name="String_2" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="getCustomerBuyingPowerResponse">
+        <sequence>
+          <element name="result" type="double"/>
+        </sequence>
+      </complexType>
+      <complexType name="getPortfolioDetailsForCustomer">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="getPortfolioDetailsForCustomerResponse">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="result" nillable="true" type="tns:PortfolioDetails"/>
+        </sequence>
+      </complexType>
+      <complexType name="getPortfolioRecordsForCustomer">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="getPortfolioRecordsForCustomerResponse">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="result" nillable="true" type="tns:PortfolioRecord"/>
+        </sequence>
+      </complexType>
+      <complexType name="orderListForCustomer">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+          <element name="String_2" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="orderListForCustomerResponse">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="result" nillable="true" type="tns:Order"/>
+        </sequence>
+      </complexType>
+      <complexType name="orderListForDealer">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+          <element name="int_1" type="int"/>
+          <element name="int_2" type="int"/>
+          <element name="int_3" type="int"/>
+          <element name="String_2" nillable="true" type="string"/>
+          <element name="String_3" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="orderListForDealerResponse">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="result" nillable="true" type="tns:Order"/>
+        </sequence>
+      </complexType>
+      <complexType name="orderSearchForCustomer">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+          <element name="String_2" nillable="true" type="string"/>
+          <element name="String_3" nillable="true" type="string"/>
+          <element name="String_4" nillable="true" type="string"/>
+          <element name="int_1" type="int"/>
+          <element name="int_2" type="int"/>
+          <element name="String_5" nillable="true" type="string"/>
+          <element name="String_6" nillable="true" type="string"/>
+          <element name="String_7" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="orderSearchForCustomerResponse">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="result" nillable="true" type="tns:Order"/>
+        </sequence>
+      </complexType>
+      <complexType name="testWebService">
+        <sequence>
+          <element name="String_1" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="testWebServiceResponse">
+        <sequence>
+          <element name="result" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="AccountSummary">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="cashAccountDetails" nillable="true" type="ns2:Object"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="portfolioDetails" nillable="true" type="ns2:Object"/>
+        </sequence>
+      </complexType>
+      <complexType name="CashAccountDetails">
+        <sequence>
+          <element name="balance" type="double"/>
+          <element name="blockedAmount" type="double"/>
+          <element name="cashAccountID" nillable="true" type="string"/>
+          <element name="cashAccountNumber" nillable="true" type="string"/>
+          <element name="currency" nillable="true" type="string"/>
+          <element name="dayTradingLimit" type="double"/>
+          <element name="margin" type="double"/>
+          <element name="marginBalance" type="double"/>
+          <element name="marginDue" type="double"/>
+          <element name="pendingDeposit" type="double"/>
+          <element name="pendingSettle" type="double"/>
+          <element name="pendingWithdrawal" type="double"/>
+          <element name="primaryTradingLimitExpDate" nillable="true" type="string"/>
+          <element name="primaryTradinglimit" type="double"/>
+          <element name="secondaryTradingLimitExpDate" nillable="true" type="string"/>
+          <element name="secondaryTradinglimit" type="double"/>
+          <element name="tradingEnabled" type="boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="Order">
+        <sequence>
+          <element name="avgPx" type="double"/>
+          <element name="clOrderID" type="long"/>
+          <element name="createDate" nillable="true" type="string"/>
+          <element name="cumQty" type="int"/>
+          <element name="executionID" nillable="true" type="string"/>
+          <element name="executionType" nillable="true" type="string"/>
+          <element name="expireTime" nillable="true" type="string"/>
+          <element name="issueCurrency" nillable="true" type="string"/>
+          <element name="lastPx" type="double"/>
+          <element name="lastShares" type="int"/>
+          <element name="lastUpdateDate" nillable="true" type="string"/>
+          <element name="leavesQty" type="int"/>
+          <element name="marketCode" nillable="true" type="string"/>
+          <element name="maxFloor" type="int"/>
+          <element name="minQty" type="int"/>
+          <element name="netSettle" type="double"/>
+          <element name="orderID" nillable="true" type="string"/>
+          <element name="orderNo" type="long"/>
+          <element name="orderType" nillable="true" type="string"/>
+          <element name="orderValue" type="double"/>
+          <element name="origClOrderID" type="long"/>
+          <element name="portfolioNo" nillable="true" type="string"/>
+          <element name="price" type="double"/>
+          <element name="quantity" type="int"/>
+          <element name="rejectReason" nillable="true" type="string"/>
+          <element name="securityExchange" nillable="true" type="string"/>
+          <element name="side" type="int"/>
+          <element name="status" nillable="true" type="string"/>
+          <element name="stopPx" type="double"/>
+          <element name="symbol" nillable="true" type="string"/>
+          <element name="timeInForce" type="int"/>
+          <element name="transactTime" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="PortfolioDetails">
+        <sequence>
+          <element name="accountStatus" type="int"/>
+          <element name="approvalStatus" type="int"/>
+          <element name="cashAccountNumber" nillable="true" type="string"/>
+          <element name="currency" nillable="true" type="string"/>
+          <element name="customerReferenceNo" nillable="true" type="string"/>
+          <element name="marginBlock" type="double"/>
+          <element name="marginDue" type="double"/>
+          <element name="marginEnabled" type="boolean"/>
+          <element name="portfolioMargin" type="double"/>
+          <element name="portfolioName" nillable="true" type="string"/>
+          <element name="portfolioNo" nillable="true" type="string"/>
+          <element name="portfolioValue" type="double"/>
+        </sequence>
+      </complexType>
+      <complexType name="PortfolioRecord">
+        <sequence>
+          <element name="averageCost" type="double"/>
+          <element name="averagePrice" type="double"/>
+          <element name="buyPending" type="int"/>
+          <element name="currency" nillable="true" type="string"/>
+          <element name="exchange" nillable="true" type="string"/>
+          <element name="marginDue" type="double"/>
+          <element name="netHoldings" type="int"/>
+          <element name="openBuyCount" type="int"/>
+          <element name="pledgedQty" type="int"/>
+          <element name="portfolioNo" nillable="true" type="string"/>
+          <element name="sellPending" type="int"/>
+        </sequence>
+      </complexType>
+      <element name="getAccountSummaryForCustomer" type="tns:getAccountSummaryForCustomer"/>
+      <element name="getAccountSummaryForCustomerResponse" type="tns:getAccountSummaryForCustomerResponse"/>
+      <element name="getCashAccountDetailsForCustomer" type="tns:getCashAccountDetailsForCustomer"/>
+      <element name="getCashAccountDetailsForCustomerResponse" type="tns:getCashAccountDetailsForCustomerResponse"/>
+      <element name="getCustomerBuyingPower" type="tns:getCustomerBuyingPower"/>
+      <element name="getCustomerBuyingPowerResponse" type="tns:getCustomerBuyingPowerResponse"/>
+      <element name="getPortfolioDetailsForCustomer" type="tns:getPortfolioDetailsForCustomer"/>
+      <element name="getPortfolioDetailsForCustomerResponse" type="tns:getPortfolioDetailsForCustomerResponse"/>
+      <element name="getPortfolioRecordsForCustomer" type="tns:getPortfolioRecordsForCustomer"/>
+      <element name="getPortfolioRecordsForCustomerResponse" type="tns:getPortfolioRecordsForCustomerResponse"/>
+      <element name="orderListForCustomer" type="tns:orderListForCustomer"/>
+      <element name="orderListForCustomerResponse" type="tns:orderListForCustomerResponse"/>
+      <element name="orderListForDealer" type="tns:orderListForDealer"/>
+      <element name="orderListForDealerResponse" type="tns:orderListForDealerResponse"/>
+      <element name="orderSearchForCustomer" type="tns:orderSearchForCustomer"/>
+      <element name="orderSearchForCustomerResponse" type="tns:orderSearchForCustomerResponse"/>
+      <element name="testWebService" type="tns:testWebService"/>
+      <element name="testWebServiceResponse" type="tns:testWebServiceResponse"/>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="http://lang.java/jaws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webservices.directfn.com/jaws" xmlns:ns4="http://reflect.lang.java/jaws" xmlns:ns7="http://www.w3.org/2001/XMLSchema" xmlns:ns8="http://util.java/jaws" xmlns:ns9="http://net.java/jaws" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://lang.java/jaws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://annotation.lang.java/jaws"/>
+      <import namespace="http://www.w3.org/2001/XMLSchema"/>
+      <import namespace="http://cert.security.java/jaws"/>
+      <import namespace="http://net.java/jaws"/>
+      <import namespace="http://util.java/jaws"/>
+      <import namespace="http://reflect.lang.java/jaws"/>
+      <import namespace="http://webservices.directfn.com/jaws"/>
+      <import namespace="http://security.java/jaws"/>
+      <complexType name="Class">
+        <sequence>
+          <element name="annotation" type="boolean"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="annotations" nillable="true" type="ns3:Annotation"/>
+          <element name="anonymousClass" type="boolean"/>
+          <element name="array" type="boolean"/>
+          <element name="canonicalName" nillable="true" type="string"/>
+          <element name="classLoader" nillable="true" type="tns:ClassLoader"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="classes" nillable="true" type="tns:Class"/>
+          <element name="componentType" nillable="true" type="tns:Class"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="constructors" nillable="true" type="ns4:Constructor"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="declaredAnnotations" nillable="true" type="ns3:Annotation"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="declaredClasses" nillable="true" type="tns:Class"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="declaredConstructors" nillable="true" type="ns4:Constructor"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="declaredFields" nillable="true" type="ns4:Field"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="declaredMethods" nillable="true" type="ns4:Method"/>
+          <element name="declaringClass" nillable="true" type="tns:Class"/>
+          <element name="enclosingClass" nillable="true" type="tns:Class"/>
+          <element name="enclosingConstructor" nillable="true" type="ns4:Constructor"/>
+          <element name="enclosingMethod" nillable="true" type="ns4:Method"/>
+          <element name="enum" type="boolean"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="enumConstants" nillable="true" type="tns:Object"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="fields" nillable="true" type="ns4:Field"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="genericInterfaces" nillable="true" type="ns4:Type"/>
+          <element name="genericSuperclass" nillable="true" type="ns4:Type"/>
+          <element name="interface" type="boolean"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="interfaces" nillable="true" type="tns:Class"/>
+          <element name="localClass" type="boolean"/>
+          <element name="memberClass" type="boolean"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="methods" nillable="true" type="ns4:Method"/>
+          <element name="modifiers" type="int"/>
+          <element name="name" nillable="true" type="string"/>
+          <element name="package" nillable="true" type="tns:Package"/>
+          <element name="primitive" type="boolean"/>
+          <element name="protectionDomain" nillable="true" type="ns5:ProtectionDomain"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="signers" nillable="true" type="tns:Object"/>
+          <element name="simpleName" nillable="true" type="string"/>
+          <element name="superclass" nillable="true" type="tns:Class"/>
+          <element name="synthetic" type="boolean"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="typeParameters" nillable="true" type="ns4:TypeVariable"/>
+        </sequence>
+      </complexType>
+      <complexType name="ClassLoader">
+        <sequence>
+          <element name="defaultAssertionStatus" type="boolean"/>
+          <element name="parent" nillable="true" type="tns:ClassLoader"/>
+        </sequence>
+      </complexType>
+      <complexType name="Object">
+        <sequence>
+          <element name="class" nillable="true" type="tns:Class"/>
+        </sequence>
+      </complexType>
+      <complexType name="Package">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="annotations" nillable="true" type="ns3:Annotation"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="declaredAnnotations" nillable="true" type="ns3:Annotation"/>
+          <element name="implementationTitle" nillable="true" type="string"/>
+          <element name="implementationVendor" nillable="true" type="string"/>
+          <element name="implementationVersion" nillable="true" type="string"/>
+          <element name="name" nillable="true" type="string"/>
+          <element name="sealed" type="boolean"/>
+          <element name="specificationTitle" nillable="true" type="string"/>
+          <element name="specificationVendor" nillable="true" type="string"/>
+          <element name="specificationVersion" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="http://security.java/jaws" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://webservices.directfn.com/jaws" xmlns:ns2="http://lang.java/jaws" xmlns:ns4="http://reflect.lang.java/jaws" xmlns:ns7="http://www.w3.org/2001/XMLSchema" xmlns:ns8="http://util.java/jaws" xmlns:ns9="http://net.java/jaws" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://security.java/jaws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://annotation.lang.java/jaws"/>
+      <import namespace="http://www.w3.org/2001/XMLSchema"/>
+      <import namespace="http://cert.security.java/jaws"/>
+      <import namespace="http://net.java/jaws"/>
+      <import namespace="http://util.java/jaws"/>
+      <import namespace="http://reflect.lang.java/jaws"/>
+      <import namespace="http://webservices.directfn.com/jaws"/>
+      <import namespace="http://lang.java/jaws"/>
+      <complexType name="CodeSigner">
+        <sequence>
+          <element name="signerCertPath" nillable="true" type="ns6:CertPath"/>
+          <element name="timestamp" nillable="true" type="tns:Timestamp"/>
+        </sequence>
+      </complexType>
+      <complexType name="CodeSource">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="certificates" nillable="true" type="ns6:Certificate"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="codeSigners" nillable="true" type="tns:CodeSigner"/>
+          <element name="location" nillable="true" type="ns9:URL"/>
+        </sequence>
+      </complexType>
+      <complexType name="PermissionCollection">
+        <sequence>
+          <element name="readOnly" type="boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="Principal">
+        <sequence>
+          <element name="name" nillable="true" type="string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ProtectionDomain">
+        <sequence>
+          <element name="classLoader" nillable="true" type="ns2:ClassLoader"/>
+          <element name="codeSource" nillable="true" type="tns:CodeSource"/>
+          <element name="permissions" nillable="true" type="tns:PermissionCollection"/>
+          <element maxOccurs="unbounded" minOccurs="0" name="principals" nillable="true" type="tns:Principal"/>
+        </sequence>
+      </complexType>
+      <complexType name="PublicKey">
+        <sequence/>
+      </complexType>
+      <complexType name="Timestamp">
+        <sequence>
+          <element name="signerCertPath" nillable="true" type="ns6:CertPath"/>
+          <element name="timestamp" nillable="true" type="dateTime"/>
+        </sequence>
+      </complexType>
+    </schema>
+  </types>
+  <message name="WebClass_getPortfolioDetailsForCustomerResponse">
+    <part element="tns:getPortfolioDetailsForCustomerResponse" name="result"/>
+  </message>
+  <message name="WebClass_getPortfolioDetailsForCustomer">
+    <part element="tns:getPortfolioDetailsForCustomer" name="parameters"/>
+  </message>
+  <message name="WebClass_getPortfolioRecordsForCustomer">
+    <part element="tns:getPortfolioRecordsForCustomer" name="parameters"/>
+  </message>
+  <message name="WebClass_orderListForDealer">
+    <part element="tns:orderListForDealer" name="parameters"/>
+  </message>
+  <message name="WebClass_testWebService">
+    <part element="tns:testWebService" name="parameters"/>
+  </message>
+  <message name="WebClass_orderListForDealerResponse">
+    <part element="tns:orderListForDealerResponse" name="result"/>
+  </message>
+  <message name="WebClass_getCustomerBuyingPower">
+    <part element="tns:getCustomerBuyingPower" name="parameters"/>
+  </message>
+  <message name="WebClass_orderSearchForCustomerResponse">
+    <part element="tns:orderSearchForCustomerResponse" name="result"/>
+  </message>
+  <message name="WebClass_getAccountSummaryForCustomer">
+    <part element="tns:getAccountSummaryForCustomer" name="parameters"/>
+  </message>
+  <message name="WebClass_getAccountSummaryForCustomerResponse">
+    <part element="tns:getAccountSummaryForCustomerResponse" name="result"/>
+  </message>
+  <message name="WebClass_getCashAccountDetailsForCustomer">
+    <part element="tns:getCashAccountDetailsForCustomer" name="parameters"/>
+  </message>
+  <message name="WebClass_getCashAccountDetailsForCustomerResponse">
+    <part element="tns:getCashAccountDetailsForCustomerResponse" name="result"/>
+  </message>
+  <message name="WebClass_orderListForCustomerResponse">
+    <part element="tns:orderListForCustomerResponse" name="result"/>
+  </message>
+  <message name="WebClass_getPortfolioRecordsForCustomerResponse">
+    <part element="tns:getPortfolioRecordsForCustomerResponse" name="result"/>
+  </message>
+  <message name="WebClass_orderListForCustomer">
+    <part element="tns:orderListForCustomer" name="parameters"/>
+  </message>
+  <message name="WebClass_testWebServiceResponse">
+    <part element="tns:testWebServiceResponse" name="result"/>
+  </message>
+  <message name="WebClass_orderSearchForCustomer">
+    <part element="tns:orderSearchForCustomer" name="parameters"/>
+  </message>
+  <message name="WebClass_getCustomerBuyingPowerResponse">
+    <part element="tns:getCustomerBuyingPowerResponse" name="result"/>
+  </message>
+  <portType name="WebClass">
+    <operation name="getAccountSummaryForCustomer">
+      <input message="tns:WebClass_getAccountSummaryForCustomer"/>
+      <output message="tns:WebClass_getAccountSummaryForCustomerResponse"/>
+    </operation>
+    <operation name="getCashAccountDetailsForCustomer">
+      <input message="tns:WebClass_getCashAccountDetailsForCustomer"/>
+      <output message="tns:WebClass_getCashAccountDetailsForCustomerResponse"/>
+    </operation>
+    <operation name="getCustomerBuyingPower">
+      <input message="tns:WebClass_getCustomerBuyingPower"/>
+      <output message="tns:WebClass_getCustomerBuyingPowerResponse"/>
+    </operation>
+    <operation name="getPortfolioDetailsForCustomer">
+      <input message="tns:WebClass_getPortfolioDetailsForCustomer"/>
+      <output message="tns:WebClass_getPortfolioDetailsForCustomerResponse"/>
+    </operation>
+    <operation name="getPortfolioRecordsForCustomer">
+      <input message="tns:WebClass_getPortfolioRecordsForCustomer"/>
+      <output message="tns:WebClass_getPortfolioRecordsForCustomerResponse"/>
+    </operation>
+    <operation name="orderListForCustomer">
+      <input message="tns:WebClass_orderListForCustomer"/>
+      <output message="tns:WebClass_orderListForCustomerResponse"/>
+    </operation>
+    <operation name="orderListForDealer">
+      <input message="tns:WebClass_orderListForDealer"/>
+      <output message="tns:WebClass_orderListForDealerResponse"/>
+    </operation>
+    <operation name="orderSearchForCustomer">
+      <input message="tns:WebClass_orderSearchForCustomer"/>
+      <output message="tns:WebClass_orderSearchForCustomerResponse"/>
+    </operation>
+    <operation name="testWebService">
+      <input message="tns:WebClass_testWebService"/>
+      <output message="tns:WebClass_testWebServiceResponse"/>
+    </operation>
+  </portType>
+  <binding name="WebClassBinding" type="tns:WebClass">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getAccountSummaryForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCashAccountDetailsForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomerBuyingPower">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPortfolioDetailsForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPortfolioRecordsForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="orderListForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="orderListForDealer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="orderSearchForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="testWebService">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="WebClassService">
+    <port binding="tns:WebClassBinding" name="WebClassPort">
+      <soap:address location="http://lbsl.02:8080/NigeriaWebService-1.0-SNAPSHOT"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.13.148:8080/WebService-1.0-SNAPSHOT</con:endpoint><con:endpoint>http://192.168.13.148:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:endpoint>http://lbsl.02:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getAccountSummaryForCustomer" bindingOperationName="getAccountSummaryForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.13.148:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jaws="http://webservices.directfn.com/jaws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <jaws:getAccountSummaryForCustomer>
+         <jaws:String_1>sdf</jaws:String_1>
+      </jaws:getAccountSummaryForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/jaws/WebClass/getAccountSummaryForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getCashAccountDetailsForCustomer" bindingOperationName="getCashAccountDetailsForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.13.148:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jaws="http://webservices.directfn.com/jaws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <jaws:getCashAccountDetailsForCustomer>
+         <jaws:String_1>sf</jaws:String_1>
+      </jaws:getCashAccountDetailsForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/jaws/WebClass/getCashAccountDetailsForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getCustomerBuyingPower" bindingOperationName="getCustomerBuyingPower" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jaws="http://webservices.directfn.com/jaws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <jaws:getCustomerBuyingPower>
+         <jaws:String_1>s</jaws:String_1>
+         <jaws:String_2>d</jaws:String_2>
+      </jaws:getCustomerBuyingPower>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/jaws/WebClass/getCustomerBuyingPowerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getPortfolioDetailsForCustomer" bindingOperationName="getPortfolioDetailsForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jaws="http://webservices.directfn.com/jaws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <jaws:getPortfolioDetailsForCustomer>
+         <jaws:String_1>sdf</jaws:String_1>
+      </jaws:getPortfolioDetailsForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/jaws/WebClass/getPortfolioDetailsForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getPortfolioRecordsForCustomer" bindingOperationName="getPortfolioRecordsForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jaws="http://webservices.directfn.com/jaws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <jaws:getPortfolioRecordsForCustomer>
+         <jaws:String_1>sdf</jaws:String_1>
+      </jaws:getPortfolioRecordsForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/jaws/WebClass/getPortfolioRecordsForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="orderListForCustomer" bindingOperationName="orderListForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jaws="http://webservices.directfn.com/jaws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <jaws:orderListForCustomer>
+         <jaws:String_1>sdf</jaws:String_1>
+         <jaws:String_2>dfsfdf</jaws:String_2>
+      </jaws:orderListForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/jaws/WebClass/orderListForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="orderListForDealer" bindingOperationName="orderListForDealer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jaws="http://webservices.directfn.com/jaws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <jaws:orderListForDealer>
+         <jaws:String_1>s</jaws:String_1>
+         <jaws:int_1>s</jaws:int_1>
+         <jaws:int_2>s</jaws:int_2>
+         <jaws:int_3>f</jaws:int_3>
+         <jaws:String_2>s</jaws:String_2>
+         <jaws:String_3>d</jaws:String_3>
+      </jaws:orderListForDealer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/jaws/WebClass/orderListForDealerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="orderSearchForCustomer" bindingOperationName="orderSearchForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.13.148:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jaws="http://webservices.directfn.com/jaws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <jaws:orderSearchForCustomer>
+         <jaws:String_1>sdf</jaws:String_1>
+         <jaws:String_2>sdf</jaws:String_2>
+         <jaws:String_3>sdf</jaws:String_3>
+         <jaws:String_4>sdf</jaws:String_4>
+         <jaws:int_1>1</jaws:int_1>
+         <jaws:int_2>1</jaws:int_2>
+         <jaws:String_5>sdf</jaws:String_5>
+         <jaws:String_6>sdf</jaws:String_6>
+         <jaws:String_7>sdf</jaws:String_7>
+      </jaws:orderSearchForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/jaws/WebClass/orderSearchForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="testWebService" bindingOperationName="testWebService" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.13.148:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jaws="http://webservices.directfn.com/jaws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <jaws:testWebService>
+         <jaws:String_1>channa</jaws:String_1>
+      </jaws:testWebService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/jaws/WebClass/testWebServiceRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

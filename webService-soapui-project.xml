@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="WebService" resourceRoot="" soapui-version="4.5.2" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="WebClassBinding" type="wsdl" bindingName="{http://webservices.directfn.com/}WebClassBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/Projects/Nigeria/WebService/localwsdl.wsdl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/D:/Projects/Nigeria/WebService/localwsdl.wsdl.xml"><con:part><con:url>file:/D:/Projects/Nigeria/WebService/localwsdl.wsdl.xml</con:url><con:content><![CDATA[<definitions name="WebClassService" targetNamespace="http://webservices.directfn.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservices.directfn.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xs:schema targetNamespace="http://webservices.directfn.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="AccountSummary" type="tns:accountSummary"/>
+      <xs:element name="CashAccountDetails" type="tns:cashAccountDetails"/>
+      <xs:element name="Order" type="tns:order"/>
+      <xs:element name="PortfolioDetails" type="tns:portfolioDetails"/>
+      <xs:element name="PortfolioRecord" type="tns:portfolioRecord"/>
+      <xs:element name="getAccountSummaryForCustomer" type="tns:getAccountSummaryForCustomer"/>
+      <xs:element name="getAccountSummaryForCustomerResponse" type="tns:getAccountSummaryForCustomerResponse"/>
+      <xs:element name="getCashAccountDetailsForCustomer" type="tns:getCashAccountDetailsForCustomer"/>
+      <xs:element name="getCashAccountDetailsForCustomerResponse" type="tns:getCashAccountDetailsForCustomerResponse"/>
+      <xs:element name="getCustomerBuyingPower" type="tns:getCustomerBuyingPower"/>
+      <xs:element name="getCustomerBuyingPowerResponse" type="tns:getCustomerBuyingPowerResponse"/>
+      <xs:element name="getPortfolioDetailsForCustomer" type="tns:getPortfolioDetailsForCustomer"/>
+      <xs:element name="getPortfolioDetailsForCustomerResponse" type="tns:getPortfolioDetailsForCustomerResponse"/>
+      <xs:element name="getPortfolioRecordsForCustomer" type="tns:getPortfolioRecordsForCustomer"/>
+      <xs:element name="getPortfolioRecordsForCustomerResponse" type="tns:getPortfolioRecordsForCustomerResponse"/>
+      <xs:element name="orderListForCustomer" type="tns:orderListForCustomer"/>
+      <xs:element name="orderListForCustomerResponse" type="tns:orderListForCustomerResponse"/>
+      <xs:element name="orderListForDealer" type="tns:orderListForDealer"/>
+      <xs:element name="orderListForDealerResponse" type="tns:orderListForDealerResponse"/>
+      <xs:element name="orderSearchForCustomer" type="tns:orderSearchForCustomer"/>
+      <xs:element name="orderSearchForCustomerResponse" type="tns:orderSearchForCustomerResponse"/>
+      <xs:element name="testWebService" type="tns:testWebService"/>
+      <xs:element name="testWebServiceResponse" type="tns:testWebServiceResponse"/>
+      <xs:complexType name="orderListForCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderListForCustomerResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:order"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="order">
+        <xs:sequence>
+          <xs:element name="clOrderID" type="xs:long"/>
+          <xs:element minOccurs="0" name="portfolioNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="symbol" type="xs:string"/>
+          <xs:element minOccurs="0" name="securityExchange" type="xs:string"/>
+          <xs:element minOccurs="0" name="orderType" type="xs:string"/>
+          <xs:element minOccurs="0" name="issueCurrency" type="xs:string"/>
+          <xs:element name="side" type="xs:int"/>
+          <xs:element name="quantity" type="xs:int"/>
+          <xs:element name="stopPx" type="xs:double"/>
+          <xs:element name="timeInForce" type="xs:int"/>
+          <xs:element minOccurs="0" name="expireTime" type="xs:string"/>
+          <xs:element name="minQty" type="xs:int"/>
+          <xs:element name="maxFloor" type="xs:int"/>
+          <xs:element name="origClOrderID" type="xs:long"/>
+          <xs:element minOccurs="0" name="orderID" type="xs:string"/>
+          <xs:element minOccurs="0" name="executionID" type="xs:string"/>
+          <xs:element minOccurs="0" name="executionType" type="xs:string"/>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+          <xs:element minOccurs="0" name="rejectReason" type="xs:string"/>
+          <xs:element name="lastShares" type="xs:int"/>
+          <xs:element name="cumQty" type="xs:int"/>
+          <xs:element name="leavesQty" type="xs:int"/>
+          <xs:element minOccurs="0" name="transactTime" type="xs:string"/>
+          <xs:element name="avgPx" type="xs:double"/>
+          <xs:element name="lastPx" type="xs:double"/>
+          <xs:element name="orderNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="createDate" type="xs:string"/>
+          <xs:element name="orderValue" type="xs:double"/>
+          <xs:element name="netSettle" type="xs:double"/>
+          <xs:element name="price" type="xs:double"/>
+          <xs:element minOccurs="0" name="lastUpdateDate" type="xs:string"/>
+          <xs:element minOccurs="0" name="marketCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderListForDealer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element name="arg1" type="xs:int"/>
+          <xs:element name="arg2" type="xs:int"/>
+          <xs:element name="arg3" type="xs:int"/>
+          <xs:element minOccurs="0" name="arg4" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg5" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderListForDealerResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:order"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderSearchForCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg3" type="xs:string"/>
+          <xs:element name="arg4" type="xs:int"/>
+          <xs:element name="arg5" type="xs:int"/>
+          <xs:element minOccurs="0" name="arg6" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg7" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg8" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orderSearchForCustomerResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:order"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPortfolioDetailsForCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPortfolioDetailsForCustomerResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:portfolioDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="portfolioDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="portfolioName" type="xs:string"/>
+          <xs:element minOccurs="0" name="portfolioNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="customerReferenceNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="cashAccountNumber" type="xs:string"/>
+          <xs:element name="marginEnabled" type="xs:boolean"/>
+          <xs:element name="accountStatus" type="xs:int"/>
+          <xs:element name="portfolioMargin" type="xs:double"/>
+          <xs:element name="marginDue" type="xs:double"/>
+          <xs:element minOccurs="0" name="currency" type="xs:string"/>
+          <xs:element name="portfolioValue" type="xs:double"/>
+          <xs:element name="approvalStatus" type="xs:int"/>
+          <xs:element name="marginBlock" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPortfolioRecordsForCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPortfolioRecordsForCustomerResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:portfolioRecord"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="portfolioRecord">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="portfolioNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="exchange" type="xs:string"/>
+          <xs:element minOccurs="0" name="currency" type="xs:string"/>
+          <xs:element name="netHoldings" type="xs:int"/>
+          <xs:element name="averageCost" type="xs:double"/>
+          <xs:element name="sellPending" type="xs:int"/>
+          <xs:element name="pledgedQty" type="xs:int"/>
+          <xs:element name="buyPending" type="xs:int"/>
+          <xs:element name="averagePrice" type="xs:double"/>
+          <xs:element name="marginDue" type="xs:double"/>
+          <xs:element name="openBuyCount" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCashAccountDetailsForCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCashAccountDetailsForCustomerResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:cashAccountDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cashAccountDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cashAccountNumber" type="xs:string"/>
+          <xs:element name="blockedAmount" type="xs:double"/>
+          <xs:element name="primaryTradinglimit" type="xs:double"/>
+          <xs:element minOccurs="0" name="primaryTradingLimitExpDate" type="xs:string"/>
+          <xs:element name="secondaryTradinglimit" type="xs:double"/>
+          <xs:element minOccurs="0" name="secondaryTradingLimitExpDate" type="xs:string"/>
+          <xs:element name="Margin" type="xs:double"/>
+          <xs:element name="marginDue" type="xs:double"/>
+          <xs:element name="marginBalance" type="xs:double"/>
+          <xs:element name="pendingSettle" type="xs:double"/>
+          <xs:element name="pendingWithdrawal" type="xs:double"/>
+          <xs:element name="pendingDeposit" type="xs:double"/>
+          <xs:element minOccurs="0" name="cashAccountID" type="xs:string"/>
+          <xs:element minOccurs="0" name="currency" type="xs:string"/>
+          <xs:element name="balance" type="xs:double"/>
+          <xs:element name="isTradingEnabled" type="xs:boolean"/>
+          <xs:element name="dayTradingLimit" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccountSummaryForCustomer">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAccountSummaryForCustomerResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:accountSummary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="accountSummary">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="PortfolioDetails" nillable="true" type="xs:anyType"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="CashAccountDetails" nillable="true" type="xs:anyType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCustomerBuyingPower">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCustomerBuyingPowerResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="testWebService">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="testWebServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="WebClass_getPortfolioRecordsForCustomer">
+    <part element="tns:getPortfolioRecordsForCustomer" name="getPortfolioRecordsForCustomer"/>
+  </message>
+  <message name="WebClass_orderListForDealer">
+    <part element="tns:orderListForDealer" name="orderListForDealer"/>
+  </message>
+  <message name="WebClass_testWebService">
+    <part element="tns:testWebService" name="testWebService"/>
+  </message>
+  <message name="WebClass_orderListForDealerResponse">
+    <part element="tns:orderListForDealerResponse" name="orderListForDealerResponse"/>
+  </message>
+  <message name="WebClass_orderSearchForCustomerResponse">
+    <part element="tns:orderSearchForCustomerResponse" name="orderSearchForCustomerResponse"/>
+  </message>
+  <message name="WebClass_getAccountSummaryForCustomer">
+    <part element="tns:getAccountSummaryForCustomer" name="getAccountSummaryForCustomer"/>
+  </message>
+  <message name="WebClass_getAccountSummaryForCustomerResponse">
+    <part element="tns:getAccountSummaryForCustomerResponse" name="getAccountSummaryForCustomerResponse"/>
+  </message>
+  <message name="WebClass_getCustomerBuyingPower">
+    <part element="tns:getCustomerBuyingPower" name="getCustomerBuyingPower"/>
+  </message>
+  <message name="WebClass_getPortfolioDetailsForCustomerResponse">
+    <part element="tns:getPortfolioDetailsForCustomerResponse" name="getPortfolioDetailsForCustomerResponse"/>
+  </message>
+  <message name="WebClass_getPortfolioDetailsForCustomer">
+    <part element="tns:getPortfolioDetailsForCustomer" name="getPortfolioDetailsForCustomer"/>
+  </message>
+  <message name="WebClass_getPortfolioRecordsForCustomerResponse">
+    <part element="tns:getPortfolioRecordsForCustomerResponse" name="getPortfolioRecordsForCustomerResponse"/>
+  </message>
+  <message name="WebClass_orderListForCustomerResponse">
+    <part element="tns:orderListForCustomerResponse" name="orderListForCustomerResponse"/>
+  </message>
+  <message name="WebClass_orderListForCustomer">
+    <part element="tns:orderListForCustomer" name="orderListForCustomer"/>
+  </message>
+  <message name="WebClass_orderSearchForCustomer">
+    <part element="tns:orderSearchForCustomer" name="orderSearchForCustomer"/>
+  </message>
+  <message name="WebClass_testWebServiceResponse">
+    <part element="tns:testWebServiceResponse" name="testWebServiceResponse"/>
+  </message>
+  <message name="WebClass_getCustomerBuyingPowerResponse">
+    <part element="tns:getCustomerBuyingPowerResponse" name="getCustomerBuyingPowerResponse"/>
+  </message>
+  <message name="WebClass_getCashAccountDetailsForCustomer">
+    <part element="tns:getCashAccountDetailsForCustomer" name="getCashAccountDetailsForCustomer"/>
+  </message>
+  <message name="WebClass_getCashAccountDetailsForCustomerResponse">
+    <part element="tns:getCashAccountDetailsForCustomerResponse" name="getCashAccountDetailsForCustomerResponse"/>
+  </message>
+  <portType name="WebClass">
+    <operation name="getAccountSummaryForCustomer" parameterOrder="getAccountSummaryForCustomer">
+      <input message="tns:WebClass_getAccountSummaryForCustomer"/>
+      <output message="tns:WebClass_getAccountSummaryForCustomerResponse"/>
+    </operation>
+    <operation name="getCashAccountDetailsForCustomer" parameterOrder="getCashAccountDetailsForCustomer">
+      <input message="tns:WebClass_getCashAccountDetailsForCustomer"/>
+      <output message="tns:WebClass_getCashAccountDetailsForCustomerResponse"/>
+    </operation>
+    <operation name="getCustomerBuyingPower" parameterOrder="getCustomerBuyingPower">
+      <input message="tns:WebClass_getCustomerBuyingPower"/>
+      <output message="tns:WebClass_getCustomerBuyingPowerResponse"/>
+    </operation>
+    <operation name="getPortfolioDetailsForCustomer" parameterOrder="getPortfolioDetailsForCustomer">
+      <input message="tns:WebClass_getPortfolioDetailsForCustomer"/>
+      <output message="tns:WebClass_getPortfolioDetailsForCustomerResponse"/>
+    </operation>
+    <operation name="getPortfolioRecordsForCustomer" parameterOrder="getPortfolioRecordsForCustomer">
+      <input message="tns:WebClass_getPortfolioRecordsForCustomer"/>
+      <output message="tns:WebClass_getPortfolioRecordsForCustomerResponse"/>
+    </operation>
+    <operation name="orderListForCustomer" parameterOrder="orderListForCustomer">
+      <input message="tns:WebClass_orderListForCustomer"/>
+      <output message="tns:WebClass_orderListForCustomerResponse"/>
+    </operation>
+    <operation name="orderListForDealer" parameterOrder="orderListForDealer">
+      <input message="tns:WebClass_orderListForDealer"/>
+      <output message="tns:WebClass_orderListForDealerResponse"/>
+    </operation>
+    <operation name="orderSearchForCustomer" parameterOrder="orderSearchForCustomer">
+      <input message="tns:WebClass_orderSearchForCustomer"/>
+      <output message="tns:WebClass_orderSearchForCustomerResponse"/>
+    </operation>
+    <operation name="testWebService" parameterOrder="testWebService">
+      <input message="tns:WebClass_testWebService"/>
+      <output message="tns:WebClass_testWebServiceResponse"/>
+    </operation>
+  </portType>
+  <binding name="WebClassBinding" type="tns:WebClass">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getAccountSummaryForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCashAccountDetailsForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomerBuyingPower">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPortfolioDetailsForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPortfolioRecordsForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="orderListForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="orderListForDealer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="orderSearchForCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="testWebService">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="WebClassService">
+    <port binding="tns:WebClassBinding" name="WebClassPort">
+      <soap:address location="http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:8080/WebService-1.0-SNAPSHOT</con:endpoint><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getAccountSummaryForCustomer" bindingOperationName="getAccountSummaryForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.directfn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:getAccountSummaryForCustomer>
+         <!--Optional:-->
+         <arg0>3</arg0>
+      </web:getAccountSummaryForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/WebClass/getAccountSummaryForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getCashAccountDetailsForCustomer" bindingOperationName="getCashAccountDetailsForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.directfn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:getCashAccountDetailsForCustomer>
+         <!--Optional:-->
+         <arg0>4</arg0>
+      </web:getCashAccountDetailsForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/WebClass/getCashAccountDetailsForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getPortfolioDetailsForCustomer" bindingOperationName="getPortfolioDetailsForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.directfn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:getPortfolioDetailsForCustomer>
+         <!--Optional:-->
+         <arg0>sdf</arg0>
+      </web:getPortfolioDetailsForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/WebClass/getPortfolioDetailsForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="orderListForCustomer" bindingOperationName="orderListForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.directfn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:orderListForCustomer>
+         <!--Optional:-->
+         <arg0>3</arg0>
+         <!--Optional:-->
+         <arg1>4</arg1>
+      </web:orderListForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/WebClass/orderListForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="orderListForDealer" bindingOperationName="orderListForDealer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.directfn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:orderListForDealer>
+         <!--Optional:-->
+         <arg0>2</arg0>
+         <arg1>2</arg1>
+         <arg2>2</arg2>
+         <arg3>2</arg3>
+         <!--Optional:-->
+         <arg4>2</arg4>
+         <!--Optional:-->
+         <arg5>2</arg5>
+      </web:orderListForDealer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/WebClass/orderListForDealerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getCustomerBuyingPower" bindingOperationName="getCustomerBuyingPower" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.directfn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:getCustomerBuyingPower>
+         <!--Optional:-->
+         <arg0>sdf</arg0>
+         <!--Optional:-->
+         <arg1>?</arg1>
+      </web:getCustomerBuyingPower>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/WebClass/getCustomerBuyingPowerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getPortfolioRecordsForCustomer" bindingOperationName="getPortfolioRecordsForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.directfn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:getPortfolioRecordsForCustomer>
+         <!--Optional:-->
+         <arg0>sdf</arg0>
+      </web:getPortfolioRecordsForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/WebClass/getPortfolioRecordsForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="orderSearchForCustomer" bindingOperationName="orderSearchForCustomer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.directfn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:orderSearchForCustomer>
+         <!--Optional:-->
+         <arg0>sd</arg0>
+         <!--Optional:-->
+         <arg1>sd</arg1>
+         <!--Optional:-->
+         <arg2>sd</arg2>
+         <!--Optional:-->
+         <arg3>s</arg3>
+         <arg4>d</arg4>
+         <arg5>d</arg5>
+         <!--Optional:-->
+         <arg6>d</arg6>
+         <!--Optional:-->
+         <arg7>d</arg7>
+         <!--Optional:-->
+         <arg8>s</arg8>
+      </web:orderSearchForCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/WebClass/orderSearchForCustomerRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="testWebService" bindingOperationName="testWebService" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/NigeriaWebService-1.0-SNAPSHOT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.directfn.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:testWebService>
+         <!--Optional:-->
+         <arg0>ch</arg0>
+      </web:testWebService>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.directfn.com/WebClass/testWebServiceRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>
